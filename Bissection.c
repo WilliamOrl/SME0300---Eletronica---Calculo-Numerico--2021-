@@ -178,7 +178,6 @@ void bisection(int n, double A0,double B0,int e, int MAXITER,int ind){
 
          // Se encontrar a raiz de X
          if (parada == 0){ 
-             printf("aaaaaaaaaaa\n");
              print(Xk,Fx,A,B,max,3,ind);
              return;
          }
