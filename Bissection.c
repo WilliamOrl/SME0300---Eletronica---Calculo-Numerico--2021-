@@ -174,7 +174,7 @@ void bisection(int n, double A0,double B0,int e, int MAXITER,int ind){
          Fx[max-1] = respx;
          
 
-        parada = respx*100000000;
+        parada = respx*1000000;
 
          // Se encontrar a raiz de X
          if (parada == 0){ 
@@ -231,7 +231,7 @@ void print(double* Xk,double* Fx, double A0, double B0, int max, int caso, int i
     fputs("Vitor Ferreira Paschoal n°11215532 \nWilliam Carrara Orlato n°1180091\n\n",pont_arq);
 
     //Adicionando os Dados no Arquivo
-    fprintf(pont_arq,"A0 = %.8lf\nB0 = %.8lf\n\n",A0,B0);
+    fprintf(pont_arq,"A0 = %.6lf\nB0 = %.8lf\n\n",A0,B0);
     
     
     switch (caso)
@@ -243,21 +243,21 @@ void print(double* Xk,double* Fx, double A0, double B0, int max, int caso, int i
      case (1): //A0 é raiz
         fprintf(pont_arq, "A0 é a raiz da função\n");
         fprintf(pont_arq,"      x           Fx           erro\n");
-        fprintf(pont_arq,"A0: %.8lf  %.8lf   0.00000000\n",A0,Fx[0]);
+        fprintf(pont_arq,"A0: %.6lf  %.8lf   0.00000000\n",A0,Fx[0]);
         break;
     
      case (2): //B0 é raiz
         fprintf(pont_arq, "B0 é a raiz da função\n");
         fprintf(pont_arq,"      x           Fx           erro\n");
-        fprintf(pont_arq,"B0: %.8lf  %.8lf   0.00000000\n",B0,Fx[0]);
+        fprintf(pont_arq,"B0: %.6lf  %.6lf   0.000000\n",B0,Fx[0]);
         break;
     
      case (3): //Método da Bisseção
-        fprintf(pont_arq,"      x           Fx           erro\n");
+        fprintf(pont_arq,"      x         Fx         erro\n");
         for(i=0;i<max;i++){
             if(Fx[i]<0)
                 Fx[i] = Fx[i]*-1;
-           fprintf(pont_arq,"x(%d): %.8lf  %.8lf   %.8lf\n",i,Xk[i],Fx[i],Fx[i]-Fx[max]);
+           fprintf(pont_arq,"x(%d): %.6lf  %.6lf   %.6lf\n",i,Xk[i],Fx[i],Fx[i]-Fx[max]);
         }
         break;
     
