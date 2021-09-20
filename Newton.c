@@ -146,7 +146,7 @@ void newton(int n, double X0, int e, int MAXITER, int ind){
         
 
         // Se encontrar a raiz de X
-        parada = respx*100000000;
+        parada = respx*1000000;
         if (parada == 0){ 
             print(Xk,Fx,devFx,X0,max,ind);
             return;
@@ -190,14 +190,14 @@ void print(double* Xk,double* Fx,double* devFx,double X0, int max, int ind){
     fputs("Vitor Ferreira Paschoal n°11215532 \nWilliam Carrara Orlato n°1180091\n\n",pont_arq);
 
     //Adicionando os Dados no Arquivo
-    fprintf(pont_arq,"x(0) = %.8lf\n\n\n",X0); 
+    fprintf(pont_arq,"x(0) = %.6lf\n\n\n",X0); 
     
     //Escrevendo Xk, Fx e Fx' no aquivo
-    fprintf(pont_arq,"      x            Fx            Fx'           erro\n");
+    fprintf(pont_arq,"      x          Fx         Fx'        erro\n");
     for(i=0;i<max;i++){
         if(Fx[i]<0)
             Fx[i] = Fx[i]*-1;
-        fprintf(pont_arq,"x(%d): %.8lf   %.8lf   %.8lf   %.8lf\n",i+1,Xk[i],Fx[i],devFx[i],Fx[i]-Fx[max]);
+        fprintf(pont_arq,"x(%d): %.6lf   %.6lf   %.6lf   %.6lf\n",i+1,Xk[i],Fx[i],devFx[i],Fx[i]-Fx[max]);
     }
    
     // fechando arquivo
