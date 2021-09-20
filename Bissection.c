@@ -212,6 +212,7 @@ void bisection(int n, double A0,double B0,int e, int MAXITER,int ind){
 void print(double* Xk,double* Fx, double A0, double B0, int max, int caso, int ind){
 
     int i;  
+    double erro;
     char nome[30];
     FILE *pont_arq;
     
@@ -253,11 +254,14 @@ void print(double* Xk,double* Fx, double A0, double B0, int max, int caso, int i
         break;
     
      case (3): //Método da Bisseção
-        fprintf(pont_arq,"      x         Fx         erro\n");
+        fprintf(pont_arq,"      x          Fx         erro\n");
         for(i=0;i<max;i++){
             if(Fx[i]<0)
                 Fx[i] = Fx[i]*-1;
-           fprintf(pont_arq,"x(%d): %.6lf  %.6lf   %.6lf\n",i,Xk[i],Fx[i],Fx[i]-Fx[max]);
+            erro = Xk[i]-Xk[max-1];
+            if (erro<0)
+                erro= -erro;     
+           fprintf(pont_arq,"x(%d): %.6lf  %.6lf   %.6lf\n",i,Xk[i],Fx[i],erro);
         }
         break;
     
