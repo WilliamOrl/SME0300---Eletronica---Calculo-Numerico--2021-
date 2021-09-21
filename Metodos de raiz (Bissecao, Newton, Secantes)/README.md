@@ -5,7 +5,7 @@ Todos os programas apresentam a mesma estrutura de dados, nos quais são necess�
 
 Em seguida o programa requisita os elementos do polinômio da equação em ordem crescente, ou seja, para o exemplo de equação:
 
-    f(x) =x^2-2
+    f(x) = (x^2)-2
 
 Devem ser digitados (-2;0;1) em sequência, lembrando sempre de digitar “Enter” entre cada um dos números, como segue o exemplo do programa de Bisseção:
 
